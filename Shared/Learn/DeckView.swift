@@ -1,4 +1,4 @@
-/// Copyright (c) 2020 Razeware LLC
+/// Copyright (c) 2021 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,53 +32,59 @@
 
 import SwiftUI
 
-struct HomeView: View {
-  @EnvironmentObject var userManager: UserManager
-  @EnvironmentObject var challengesViewModel: ChallengesViewModel
-  @AppStorage("learningEnabled") var learningEnabled: Bool = true
+struct DeckView: View {
+    
+    @AppStorage("cardBackgroundColor")
+    var cardBackgroundColorInt: Int = 0xFF0000FF
+    
+    @ObservedObject var deck: FlashDeck
 
-  var body: some View {
-    TabView {
-        if learningEnabled {
-           LearnView()
-                .tabItem({
-                    VStack {
-                        Image(systemName: "bookmark")
-                        Text("Learn")
-                    }
-                })
-                .tag(0)
-        }
-      PracticeView(
-        challengeTest: $challengesViewModel.currentChallenge,
-        userName: $userManager.profile.name,
-        numberOfAnswered: .constant(challengesViewModel.numberOfAnswered)
-      )
-      .tabItem({
-        VStack {
-          Image(systemName: "rectangle.dock")
-          Text("Challenge")
-        }
-      })
-      .tag(1)
+    let onMemorized: () -> Void
 
-      SettingsView()
-        .tabItem({
-          VStack {
-            Image(systemName: "gear")
-            Text("Settings")
-          }
-        })
-        .tag(2)
+    init(deck: FlashDeck, onMemorized: @escaping () -> Void) {
+      self.onMemorized = onMemorized
+      self.deck = deck
     }
-    .accentColor(.orange)
-  }
+    
+    var body: some View {
+        ZStack {
+            ForEach(deck.cards.filter {$0.isActive}) {card in
+                getCardView(for: card)
+            }
+        }
+    }
+    
+    func getCardView(for card: FlashCard) -> CardView {
+      let activeCards = deck.cards.filter { $0.isActive == true }
+      if let lastCard = activeCards.last {
+        if lastCard == card {
+          return createCardView(for: card)
+        }
+      }
+
+      let view = createCardView(for: card)
+
+      return view
+    }
+
+    func createCardView(for card: FlashCard) -> CardView {
+      let view = CardView(card, cardColor: Color(rgba: cardBackgroundColorInt),
+          onDrag: { card, direction in
+                if direction == .left {
+                  self.onMemorized()
+                }
+              })
+
+      return view
+    }
+    
 }
 
-struct HomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    HomeView()
-      .environmentObject(UserManager())
-      .environmentObject(ChallengesViewModel())    
-  }
+struct DeckView_Previews: PreviewProvider {
+    static var previews: some View {
+        DeckView(
+          deck: FlashDeck(from: ChallengesViewModel.challenges),
+          onMemorized: {}
+        )
+    }
 }

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099A8F312712AD0500BBEDFF /* FlashDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F302712AD0500BBEDFF /* FlashDeck.swift */; };
+		099A8F322712AD0500BBEDFF /* FlashDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F302712AD0500BBEDFF /* FlashDeck.swift */; };
+		099A8F342712B93800BBEDFF /* LearningState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F332712B93800BBEDFF /* LearningState.swift */; };
+		099A8F352712B93800BBEDFF /* LearningState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F332712B93800BBEDFF /* LearningState.swift */; };
+		099A8F372712BA9B00BBEDFF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F362712BA9B00BBEDFF /* CardView.swift */; };
+		099A8F382712BA9B00BBEDFF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F362712BA9B00BBEDFF /* CardView.swift */; };
+		099A8F3A2712BAB600BBEDFF /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F392712BAB600BBEDFF /* DeckView.swift */; };
+		099A8F3B2712BAB600BBEDFF /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8F392712BAB600BBEDFF /* DeckView.swift */; };
+		09A5250E2703C75600057CDE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5250D2703C75600057CDE /* LearnView.swift */; };
+		09A5250F2703C75600057CDE /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5250D2703C75600057CDE /* LearnView.swift */; };
+		09A525112703CB9100057CDE /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A525102703CB9100057CDE /* FlashCard.swift */; };
+		09A525122703CB9100057CDE /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A525102703CB9100057CDE /* FlashCard.swift */; };
 		571C66BC25439AF6002E497F /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C66BB25439AF6002E497F /* ScoreView.swift */; };
 		571C66BD25439AF6002E497F /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571C66BB25439AF6002E497F /* ScoreView.swift */; };
 		573A7200253A5FE500B8D1BE /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A71FF253A5FE500B8D1BE /* StarterView.swift */; };
@@ -68,6 +80,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		099A8F302712AD0500BBEDFF /* FlashDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashDeck.swift; sourceTree = "<group>"; };
+		099A8F332712B93800BBEDFF /* LearningState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningState.swift; sourceTree = "<group>"; };
+		099A8F362712BA9B00BBEDFF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		099A8F392712BAB600BBEDFF /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		09A5250D2703C75600057CDE /* LearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		09A525102703CB9100057CDE /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
 		571C66BB25439AF6002E497F /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		573A71FF253A5FE500B8D1BE /* StarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 		573A7204253A5FF100B8D1BE /* PracticeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
@@ -123,6 +141,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A5250C2703C5D400057CDE /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				09A5250D2703C75600057CDE /* LearnView.swift */,
+				09A525102703CB9100057CDE /* FlashCard.swift */,
+				099A8F302712AD0500BBEDFF /* FlashDeck.swift */,
+				099A8F332712B93800BBEDFF /* LearningState.swift */,
+				099A8F362712BA9B00BBEDFF /* CardView.swift */,
+				099A8F392712BAB600BBEDFF /* DeckView.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
 		57578F9024E9D943003465A4 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +209,14 @@
 			path = Practice;
 			sourceTree = "<group>";
 		};
+		57936FC625577E2100195105 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57936FC725577EC300195105 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		57AF758E25648311005C1716 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,14 +225,6 @@
 				57AF759125648311005C1716 /* Appearance.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		57936FC625577E2100195105 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				57936FC725577EC300195105 /* SettingsView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		57B3CA462536553D00888D62 /* Profile */ = {
@@ -227,6 +258,7 @@
 		57EF33FF24E89F91004ABEB2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				09A5250C2703C5D400057CDE /* Learn */,
 				57AF758E25648311005C1716 /* Utils */,
 				573A71FF253A5FE500B8D1BE /* StarterView.swift */,
 				5794616E2540CB5100342D5D /* HistoryView.swift */,
@@ -375,6 +407,7 @@
 				57AF759425648311005C1716 /* LocalNotifications.swift in Sources */,
 				573A720B253A5FF100B8D1BE /* PracticeView.swift in Sources */,
 				5758869C25365A00006AD39D /* Settings.swift in Sources */,
+				099A8F342712B93800BBEDFF /* LearningState.swift in Sources */,
 				57EF341324E89F92004ABEB2 /* KuchiApp.swift in Sources */,
 				5794616F2540CB5100342D5D /* HistoryView.swift in Sources */,
 				57AF759225648311005C1716 /* Color+Extension.swift in Sources */,
@@ -384,6 +417,7 @@
 				5758869E25365A00006AD39D /* UserManager.swift in Sources */,
 				573A7217253A5FF100B8D1BE /* ChoicesRow.swift in Sources */,
 				5758869A25365A00006AD39D /* Profile.swift in Sources */,
+				09A5250E2703C75600057CDE /* LearnView.swift in Sources */,
 				573A7215253A5FF100B8D1BE /* ChoicesView.swift in Sources */,
 				57F765172537A610002C00B5 /* WelcomeMessageView.swift in Sources */,
 				575886A325365A16006AD39D /* KeyboardFollower.swift in Sources */,
@@ -391,11 +425,15 @@
 				575886AB25365E02006AD39D /* WelcomeBackgroundImage.swift in Sources */,
 				573A7211253A5FF100B8D1BE /* ChallengesViewModel.swift in Sources */,
 				57472F8C2533B85800F47C29 /* HorizontallyAlignedLabelStyle.swift in Sources */,
+				09A525112703CB9100057CDE /* FlashCard.swift in Sources */,
 				57F765212537B3C0002C00B5 /* BorderedViewModifier.swift in Sources */,
 				57F7651C2537A6A5002C00B5 /* RegisterView.swift in Sources */,
 				57A447F0252BD68200CF7A3E /* WelcomeView.swift in Sources */,
 				57578FDE24E9D943003465A4 /* HomeView.swift in Sources */,
 				573A7213253A5FF100B8D1BE /* CongratulationsView.swift in Sources */,
+				099A8F372712BA9B00BBEDFF /* CardView.swift in Sources */,
+				099A8F312712AD0500BBEDFF /* FlashDeck.swift in Sources */,
+				099A8F3A2712BAB600BBEDFF /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +445,7 @@
 				573A7216253A5FF100B8D1BE /* ChoicesView.swift in Sources */,
 				57F7651D2537A6A5002C00B5 /* RegisterView.swift in Sources */,
 				57F765222537B3C0002C00B5 /* BorderedViewModifier.swift in Sources */,
+				099A8F382712BA9B00BBEDFF /* CardView.swift in Sources */,
 				57F765182537A610002C00B5 /* WelcomeMessageView.swift in Sources */,
 				573A720C253A5FF100B8D1BE /* PracticeView.swift in Sources */,
 				57EF341424E89F92004ABEB2 /* KuchiApp.swift in Sources */,
@@ -415,7 +454,10 @@
 				5758869B25365A00006AD39D /* Profile.swift in Sources */,
 				57AF759325648311005C1716 /* Color+Extension.swift in Sources */,
 				57472F8D2533B85800F47C29 /* HorizontallyAlignedLabelStyle.swift in Sources */,
+				09A525122703CB9100057CDE /* FlashCard.swift in Sources */,
 				573A7210253A5FF100B8D1BE /* ChallengeView.swift in Sources */,
+				099A8F352712B93800BBEDFF /* LearningState.swift in Sources */,
+				099A8F3B2712BAB600BBEDFF /* DeckView.swift in Sources */,
 				571C66BD25439AF6002E497F /* ScoreView.swift in Sources */,
 				57578FDF24E9D943003465A4 /* HomeView.swift in Sources */,
 				573A7201253A5FE500B8D1BE /* StarterView.swift in Sources */,
@@ -426,8 +468,10 @@
 				57F765132537A25D002C00B5 /* LogoImage.swift in Sources */,
 				579461702540CB5100342D5D /* HistoryView.swift in Sources */,
 				573A7218253A5FF100B8D1BE /* ChoicesRow.swift in Sources */,
+				09A5250F2703C75600057CDE /* LearnView.swift in Sources */,
 				575886AC25365E02006AD39D /* WelcomeBackgroundImage.swift in Sources */,
 				57936FC925577EC300195105 /* SettingsView.swift in Sources */,
+				099A8F322712AD0500BBEDFF /* FlashDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

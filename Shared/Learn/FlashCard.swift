@@ -1,4 +1,4 @@
-/// Copyright (c) 2020 Razeware LLC
+/// Copyright (c) 2021 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -30,55 +30,16 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-struct HomeView: View {
-  @EnvironmentObject var userManager: UserManager
-  @EnvironmentObject var challengesViewModel: ChallengesViewModel
-  @AppStorage("learningEnabled") var learningEnabled: Bool = true
-
-  var body: some View {
-    TabView {
-        if learningEnabled {
-           LearnView()
-                .tabItem({
-                    VStack {
-                        Image(systemName: "bookmark")
-                        Text("Learn")
-                    }
-                })
-                .tag(0)
-        }
-      PracticeView(
-        challengeTest: $challengesViewModel.currentChallenge,
-        userName: $userManager.profile.name,
-        numberOfAnswered: .constant(challengesViewModel.numberOfAnswered)
-      )
-      .tabItem({
-        VStack {
-          Image(systemName: "rectangle.dock")
-          Text("Challenge")
-        }
-      })
-      .tag(1)
-
-      SettingsView()
-        .tabItem({
-          VStack {
-            Image(systemName: "gear")
-            Text("Settings")
-          }
-        })
-        .tag(2)
-    }
-    .accentColor(.orange)
-  }
+struct FlashCard: Identifiable {
+    var id = UUID()
+    var isActive = true
+    var card: Challenge
 }
 
-struct HomeView_Previews: PreviewProvider {
-  static var previews: some View {
-    HomeView()
-      .environmentObject(UserManager())
-      .environmentObject(ChallengesViewModel())    
-  }
+extension FlashCard: Equatable {
+    static func == (lhs: FlashCard, rhs: FlashCard) -> Bool {
+        return lhs.card.question == rhs.card.question && lhs.card.answer == rhs.card.answer
+    }
 }
